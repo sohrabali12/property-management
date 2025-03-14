@@ -1,6 +1,16 @@
+
+First time Git & Github setup
+================================
 1. git init
 2. git add .
 3. git commit -m "initial commit"
 4. git remote add origin https://github.com/sohrabali12/propert-management.git
 5. git remote set-url origin https://sohrabali12:<AccessToken>@github.com/sohrabali12/propert-management.git
 6. git push origin master
+
+Next Time Onwards
+==================
+1 . git pull
+2. git add .
+3. git commit -m "some comment"
+git push
