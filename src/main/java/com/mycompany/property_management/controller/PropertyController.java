@@ -24,16 +24,19 @@ public class PropertyController {
     @PostMapping("/save")
     public ResponseEntity<PropertyDTO> saveProperty(@RequestBody PropertyDTO propertyDTO){
         propertyDTO = propertyService.savePropertyDto(propertyDTO);
-        ResponseEntity<PropertyDTO> responseEntity = new ResponseEntity<>(propertyDTO, HttpStatus.CREATED);
-        return responseEntity;
+        return new ResponseEntity<>(propertyDTO, HttpStatus.CREATED);
     }
 
     @GetMapping("/list")
     public ResponseEntity<List<PropertyDTO>> getAllProperties(){
         List<PropertyDTO> properties = propertyService.getAllProperties();
-        ResponseEntity<List<PropertyDTO>> responseEntity;
-        responseEntity = new ResponseEntity<>(properties, HttpStatus.OK);
-        return responseEntity;
+        return new ResponseEntity<>(properties, HttpStatus.OK);
+    }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<PropertyDTO>> getAllPropertiesForUser(@PathVariable Long userId){
+        List<PropertyDTO> properties = propertyService.getAllPropertiesForUser(userId);
+        return new ResponseEntity<>(properties, HttpStatus.OK);
     }
 
     @PutMapping("/update/{propertyId}")
