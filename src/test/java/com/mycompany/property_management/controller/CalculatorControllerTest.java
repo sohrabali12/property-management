@@ -1,6 +1,5 @@
-package com.mycompany.property_management.controllertest;
+package com.mycompany.property_management.controller;
 
-import com.mycompany.property_management.controller.CalculatorController;
 import com.mycompany.property_management.dto.CalculatorDTO;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
