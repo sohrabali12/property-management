@@ -28,6 +28,6 @@ public class CalculatorController {
     public ResponseEntity<Double> multiply(@RequestBody CalculatorDTO calculatorDTO) {
 
         Double result = calculatorDTO.getNum1() * calculatorDTO.getNum2() * calculatorDTO.getNum3() * calculatorDTO.getNum4();
-        return new ResponseEntity<>(result, HttpStatus.CREATED);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }
