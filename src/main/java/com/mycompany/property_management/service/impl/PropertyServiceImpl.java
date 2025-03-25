@@ -101,6 +101,14 @@ public class PropertyServiceImpl implements PropertyService {
             propDto = propertyConverter.convertEntityToDTO(pe);
             propertyRepository.save(pe);
         }
+        else {
+            List<ErrorModel> errorModels = new ArrayList<>();
+            ErrorModel errorModel = new ErrorModel();
+            errorModel.setCode("PROPERTY_DOES_NOT_EXIST");
+            errorModel.setMessage("A Property With This Property ID Does Not Exists..");
+            errorModels.add(errorModel);
+            throw new BusinessException(errorModels);
+        }
 
         return propDto;
     }
